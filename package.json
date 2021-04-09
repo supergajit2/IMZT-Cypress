@@ -1,5 +1,29 @@
 {
   "dependencies": {
     "cypress": "^6.6.0"
-  }
+  },
+  "name": "imzt-cypress",
+  "version": "1.0.0",
+  "description": "IMZT Admin Tests for Missionary Portal 4.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supergajit2/IMZT-Cypress.git"
+  },
+  "keywords": [
+    "IMZT",
+    "Cypress",
+    "MP4",
+    "Automation"
+  ],
+  "author": "Summer L. Armitage",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/supergajit2/IMZT-Cypress/issues"
+  },
+  "homepage": "https://github.com/supergajit2/IMZT-Cypress#readme"
 }
