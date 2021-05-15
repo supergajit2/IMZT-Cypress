@@ -1,4 +1,4 @@
-/// <reference types = "Cypress" />
+// <reference types = "Cypress" />
 
 describe('Run all the MTC Reports', () => {
     beforeEach(() => {
@@ -23,5 +23,10 @@ describe('Run all the MTC Reports', () => {
         cy.get('[name="Perú Missionary Training Center- Remote Training"]').click() 
         cy.get('[data-testid="subtitle-text"]').contains('Summary Report')
     });
-   
+    it('Run S. Africa Remote', () => {
+        cy.get('[data-testid="nav-menu"]').click()
+        cy.get('[name="MTC List"]').click()
+        cy.get('[name="South Africa Missionary Training Center- Remote Training"]').click() 
+        cy.get('[data-testid="subtitle-text"]').contains('Summary Report')
+    });
 })
