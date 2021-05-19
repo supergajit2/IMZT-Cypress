@@ -29,4 +29,56 @@ describe('Run all the MTC Reports', () => {
         cy.get('[name="South Africa Missionary Training Center- Remote Training"]').click() 
         cy.get('[data-testid="subtitle-text"]').contains('Summary Report')
     });
+    it('Run Columbia Remote', () => {
+        cy.get('[data-testid="nav-menu"]').click()
+        cy.get('[name="MTC List"]').click()
+        cy.get('[name="Colombia Missionary Training Center- Remote Training"]').click() 
+        cy.get('[data-testid="subtitle-text"]').contains('Summary Report')
+    });
+    it('Run Ghana Remote', () => {
+        cy.get('[data-testid="nav-menu"]').click()
+        cy.get('[name="MTC List"]').click()
+        cy.get('[name="Ghana Missionary Training Center- Remote Training"]').click() 
+        cy.get('[data-testid="subtitle-text"]').contains('Summary Report')
+    });
+    it('Run Provo Remote', () => {
+        cy.get('[data-testid="nav-menu"]').click()
+        cy.get('[name="MTC List"]').click()
+        cy.get('[name="Provo Missionary Training Center- Remote Training"]').click() 
+        cy.get('[data-testid="subtitle-text"]').contains('Summary Report')
+    });
+    it('Run Brazil Remote', () => {
+        cy.get('[data-testid="nav-menu"]').click()
+        cy.get('[name="MTC List"]').click()
+        cy.get('[name="Brazil Missionary Training Center- Remote Training"]').click() 
+        cy.get('[data-testid="subtitle-text"]').contains('Summary Report')
+    });
+    it('Run Mexico Remote', () => {
+        cy.get('[data-testid="nav-menu"]').click()
+        cy.get('[name="MTC List"]').click()
+        cy.get('[name="Mexico Missionary Training Center- Remote Training"]').click() 
+        cy.get('[data-testid="subtitle-text"]').contains('Summary Report')
+    });
+    it('Run England Remote', () => {
+        cy.get('[data-testid="nav-menu"]').click()
+        cy.get('[name="MTC List"]').click()
+        cy.get('[name="England Missionary Training Center- Remote Training"]').click() 
+        cy.get('[data-testid="subtitle-text"]').contains('Summary Report')
+    });
+    it('Run New Zealand Remote', () => {
+        cy.get('[data-testid="nav-menu"]').click()
+        cy.get('[name="MTC List"]').click()
+        cy.get('[name="New Zealand Missionary Training Center- Remote Training"]').click() 
+        cy.get('[data-testid="subtitle-text"]').contains('Summary Report')
+    });
+    it('Run Phillippines Remote', () => {
+        cy.get('[data-testid="nav-menu"]').click()
+        cy.get('[name="MTC List"]').click()
+        cy.get('[name="Philippines Missionary Training Center- Remote Training"]').click() 
+        cy.get('[data-testid="subtitle-text"]').contains('Summary Report')
+    });
+    it('Logout', () => {
+        cy.get('[data-testid="text-with-icon"]').contains('24').click()
+        cy.get('[data-testid="link"]').contains('Sign Out').click()
+    })
 })
