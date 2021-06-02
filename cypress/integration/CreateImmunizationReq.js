@@ -1,4 +1,4 @@
-describe('Create/Edit/Delete New Immunization Requirement', () => {
+describe('Create New Immunization Requirement', () => {
     beforeEach(() => {
         Cypress.Cookies.preserveOnce(...["ChurchSSO-int", "JSESSIONID", "__VCAP_ID__"])
     })
@@ -25,7 +25,7 @@ describe('Create/Edit/Delete New Immunization Requirement', () => {
         cy.get('[data-testid="req-config"]').contains('Identification')
         cy.get('.cizuhu-0').eq(1).type('203')
         cy.get('.cizuhu-0').eq(2).type('SQ')
-        cy.get('.eMRJJx')
+        cy.get('.eMRJJx').contains('Visitors')
         cy.get('[data-testid="select"]').select('Regular series').should('have.value', '3')
         cy.wait(5000)
         cy.get('p').contains('Before you')
@@ -33,8 +33,9 @@ describe('Create/Edit/Delete New Immunization Requirement', () => {
         cy.get('.eSguHt').contains('Continue').click()
         cy.get('.u27cpt-0').contains('Immunization Requirements')
     })
-    /* it('Logout', () => {
+
+        it('Logout', () => {
         cy.get('[data-testid="text-with-icon"]').eq(1).click()
         cy.get('[data-testid="link"]').contains('Sign Out').click()
-    }) */
+    }) 
 })
