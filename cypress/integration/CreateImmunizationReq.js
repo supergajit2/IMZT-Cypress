@@ -3,7 +3,7 @@ describe('Create New Immunization Requirement', () => {
         Cypress.Cookies.preserveOnce(...["ChurchSSO-int", "JSESSIONID", "__VCAP_ID__"])
     })
     it('Successful login', () => {
-        cy.visit('https://missionary-stage.churchofjesuschrist.org/portal/admin-home?lang=eng')
+        cy.visit('https://missionary-test.churchofjesuschrist.org/portal/admin-home?lang=eng')
         cy.get('#username').type('imt23')
         cy.get('#password').type('password1')
         cy.get('#sign-in').click()
@@ -34,7 +34,7 @@ describe('Create New Immunization Requirement', () => {
         cy.get('.u27cpt-0').contains('Immunization Requirements')
     })
 
-        it('Logout', () => {
+    it('Logout', () => {
         cy.get('[data-testid="text-with-icon"]').eq(1).click()
         cy.get('[data-testid="link"]').contains('Sign Out').click()
     }) 
