@@ -22,9 +22,11 @@ describe('Create New Immunization Requirement', () => {
         cy.get('.u27cpt-0').contains('Immunization Requirements')
     })
     // The DB saves deleted alt groups so it will error if the same block_id is used twice. If you want to
-    // run this multiple times btween DB refreshes you will have to change the typed values in these two lines:
-    // cy.get('.cizuhu-0').eq(1).type('203')
-    // cy.get('.cizuhu-0').eq(2).type('SQ')
+    // run this multiple times between DB refreshes you will have to change the typed values in these two lines:
+    // cy.get('.BlockIdDescription__FormFieldSmall-s0miop-3').type('203')
+    // cy.get('.ReqConfig__FormFieldSmall-sc-1ph5kx2-4 > .sc-8e6q3s-0 > .cizuhu-0').type('SQ')
+    // and the verification done in this line will also need to be changed:
+    // cy.get('.eMRJJx').contains('Visitors')
     
     it('Create New Requirement', () => {
         cy.get('[data-testid="text-with-icon"]').contains('Add Immunization Requirement').click()

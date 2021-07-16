@@ -1,5 +1,6 @@
 /// <reference types = "Cypress" />
 
+//delete the requirement created and edited in the previous tests.
 describe('Delete Immunization Requirement', () => {
     before(() => {
         cy.visit(Cypress.env("stageAdminHome"))
