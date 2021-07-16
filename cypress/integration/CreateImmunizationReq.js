@@ -1,14 +1,20 @@
+/// <reference types = "Cypress" />
+
 describe('Create New Immunization Requirement', () => {
+    before(() => {
+        cy.visit(Cypress.env("stageAdminHome"))
+        cy.fixture('users').then(function(user) {
+            globalThis.user = user
+        })
+    })
     beforeEach(() => {
         Cypress.Cookies.preserveOnce(...["ChurchSSO-int", "JSESSIONID", "__VCAP_ID__"])
     })
     it('Successful login', () => {
-        cy.visit('https://missionary-test.churchofjesuschrist.org/portal/admin-home?lang=eng')
-        cy.get('#username').type('imt23')
-        cy.get('#password').type('password1')
-        cy.get('#sign-in').click()
+        cy.login(user.imt23, user.password)
         cy.get('[data-testid="title-text"]').contains('Missionary Immunization Search')
-    });    
+    });  
+
     it('Open Immunization Requirements Page', () => {
         cy.get('[data-testid="nav-menu"]').click()
         cy.get('[name="Immunization Requirements"]').click()
@@ -23,8 +29,8 @@ describe('Create New Immunization Requirement', () => {
     it('Create New Requirement', () => {
         cy.get('[data-testid="text-with-icon"]').contains('Add Immunization Requirement').click()
         cy.get('[data-testid="req-config"]').contains('Identification')
-        cy.get('.cizuhu-0').eq(1).type('203')
-        cy.get('.cizuhu-0').eq(2).type('SQ')
+        cy.get('.BlockIdDescription__FormFieldSmall-s0miop-3').type('203')
+        cy.get('.ReqConfig__FormFieldSmall-sc-1ph5kx2-4 > .sc-8e6q3s-0 > .cizuhu-0').type('SQ')
         cy.get('.eMRJJx').contains('Visitors')
         cy.get('[data-testid="select"]').select('Regular series').should('have.value', '3')
         cy.wait(5000)

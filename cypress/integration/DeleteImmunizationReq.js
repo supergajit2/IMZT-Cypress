@@ -1,12 +1,17 @@
+/// <reference types = "Cypress" />
+
 describe('Delete Immunization Requirement', () => {
+    before(() => {
+        cy.visit(Cypress.env("stageAdminHome"))
+        cy.fixture('users').then(function(user) {
+            globalThis.user = user
+        })
+    })
     beforeEach(() => {
         Cypress.Cookies.preserveOnce(...["ChurchSSO-int", "JSESSIONID", "__VCAP_ID__"])
     })
     it('Successful login', () => {
-        cy.visit('https://missionary-test.churchofjesuschrist.org/portal/admin-home?lang=eng')
-        cy.get('#username').type('imt23')
-        cy.get('#password').type('password1')
-        cy.get('#sign-in').click()
+        cy.login(user.imt23, user.password)
         cy.get('[data-testid="title-text"]').contains('Missionary Immunization Search')
     });    
     it('Open Immunization Requirements Page', () => {
